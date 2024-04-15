@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: ${{ matrix.example-node-project }}/package-lock.json
     - run: cd ${{ matrix.example-node-project }}
     - run: npm ci
     - run: npm run build --if-present
