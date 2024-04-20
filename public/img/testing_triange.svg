@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+  <!-- Triangle -->
+  <polygon points="200,50 350,350 50,350" fill="none" stroke="white" stroke-width="2" />
+
+  <!-- Texts -->
+  <text x="200" y="310" font-family="Arial" font-size="16" fill="white" text-anchor="middle">unit</text>
+  <text x="200" y="210" font-family="Arial" font-size="16" fill="white" text-anchor="middle">integration</text>
+  <text x="200" y="110" font-family="Arial" font-size="16" fill="white" text-anchor="middle">e2e</text>
+  <!-- Line -->
+  <line x1="100" y1="250" x2="300" y2="250" stroke="white" stroke-width="2" />
+  <line x1="150" y1="150" x2="250" y2="150" stroke="white" stroke-width="2" />
+</svg>

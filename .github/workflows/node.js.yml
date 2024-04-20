@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-        example-node-project: ["example-projects/frontend/vue-frontend", "example-projects/frontend/vue-frontend", "example-projects/backend/node-backend"]
+        example-node-project: ["example-projects/frontend/vue-frontend", "example-projects/backend/node-backend"]
 
     steps:
     - uses: actions/checkout@v3

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>Software testing</section>
+				<section>What is software testing?</section>
+				<section>
+					<p>For example these are:</p>
+					<ul>
+						<li>Regression testing</li>
+						<li>Usability testing</li>
+						<li>Explorative testing</li>
+						<li>Ad-hoc testing</li>
+					</ul>
+				</section>
+				<section>
+					<p>Automated regression testing<p>
+					<img src="img/testing_triange.svg">
+				</section>
+				<section>
+					<p>End to end (e2e) testing</p>
+					<ul>
+						<li>Whole system under testing</li>
+						<li>Usually test inputs data from UI and/or APIs</li>
+						<li>Verifications are made from UI and/or APIs</li>
+						<li>One should have low number of these tests</li>
+					</ul>
+				</section>
+				<section>
+					<p>Integration testing</p>
+					<ul>
+						<li>Part of system or part of process under testing</li>
+						<li>One should have these tests more than e2e tests but less than unit tests</li>
+					</ul>
+				</section>
+				<section>
+					<p>Unit testing</p>
+					<ul>
+						<li>One "unit" under test (class or similar)</li>
+						<li>Really fast to run</li>
+						<li>No external requiments (e.g. database)</li>
+						<li>One should have lots of unit tests</li>
+					</ul>
+				</section>
+				
+				<section>
+					<p>Unit test example</p>
+					<pre>
+def test_calculate_sum():
+	# Arrange: Set up test data (inputs)
+	num1 = 5
+	num2 = 3
+
+	# Act: Call the function with the test data
+	result = calculate_sum(num1, num2)
+
+	# Assert: Check that the result is as expected
+	expected_result = 8
+	assert result == expected_result, f"Expected {expected_result}, but got {result}"
+					</pre>
+				</section>
+				<section>
+					<p>Unit test structure</p>
+					<ul>
+						<li>AAA principle</li>
+						<li>Arrange: create initial state for test</li>
+						<li>Act: execute code under test</li>
+						<li>Assert: verify results</li>
+					</ul>
+				</section>
+				<section>
+					<p>Good unit test</p>
+					<ul>
+						<li>Small: tests only one thing (independent)</li>
+						<li>Follows AAA principle (structured)</li>
+						<li>Controls circumstances (isolated)</li>
+						<li>Does not cause side effects to other tests (isolated)</li>
+						<li>DAMP not DRY (descriptive)</li>
+						<li>Fast to run (under 1 sec)</li>
+						<li>Reliable (repeatable)</li>
+					</ul>
+				</section>
+				<section>
+					<p>What if unit testing is hard?</p>
+					<ul>
+						<li>Usually this means that code was not written as testable</li>
+						<li>For example static functions are poison for unit tests</li>
+						<li>In testable code external dependencies are injected to unit
+							<ul>
+								<li>Dependency injection (for example Spring framework)</li>
+								<li>Constructor injection</li>
+							</ul>
+						</li>
+						<li>Testable code (usually) produces better architecture</li>
+					</ul>
+				</section>
+				<section>
+					<p>When should unit test be executed?</p>
+					<ul>
+						<li>All the time!</li>
+						<li>Every developer when changing anything</li>
+						<li>CI/CD pipeline for every commit / PR / MR</li>
+					</ul>
+				</section>
+				<section>
+					<p>Demo</p>
+					<a href="https://github.com/Turmio/unit-testing/tree/master/example-projects">Github example projects</a>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
+s().init()</script>
+    </body>
+</html>
